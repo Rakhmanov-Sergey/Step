@@ -19,7 +19,6 @@
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
 			<IconTopGroupPersistent>true</IconTopGroupPersistent>
-			<StartupCode><![CDATA[update_target();]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1480954021709</Id>
@@ -53,8 +52,8 @@
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</StepDurationCode>
 					<SpaceType>CONTINUOUS</SpaceType>
-					<WidthCode><![CDATA[500]]></WidthCode>
-					<HeightCode><![CDATA[500]]></HeightCode>
+					<WidthCode><![CDATA[5480]]></WidthCode>
+					<HeightCode><![CDATA[5480]]></HeightCode>
 					<ZHeightCode><![CDATA[0]]></ZHeightCode>
 					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
@@ -102,22 +101,19 @@
 				<Variable Class="PlainVariable">
 					<Id>1481133688448</Id>
 					<Name><![CDATA[target_x]]></Name>
-					<X>-240</X><Y>90</Y>
+					<X>1230</X><Y>2460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1481133795404</Id>
 					<Name><![CDATA[target_y]]></Name>
-					<X>-240</X><Y>110</Y>
+					<X>1230</X><Y>2480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -132,7 +128,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1481202502791</Id>
 					<Name><![CDATA[scale_index]]></Name>
-					<X>-240</X><Y>150</Y>
+					<X>1230</X><Y>2520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -147,7 +143,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1481202973523</Id>
 					<Name><![CDATA[coordinates_index]]></Name>
-					<X>-240</X><Y>170</Y>
+					<X>1230</X><Y>2540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -159,6 +155,21 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1481656267935</Id>
+					<Name><![CDATA[speedCollectionSize]]></Name>
+					<X>1350</X><Y>2460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -166,14 +177,33 @@
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1481133280433</Id>
 					<Name><![CDATA[go]]></Name>
-					<X>-110</X><Y>150</Y>
+					<X>1360</X><Y>2520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[for(Bts car : gHCars){
+					<Body><![CDATA[for(Bts car : gRHCars){
+	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(target_x, target_y);
+	car.moveTo(5780, 2748);	
+}
+
+for(Bts car : gLHCars){
+	car.initSpeedCollection();
+	car.setSpeed(car.speed, SpeedUnits.MPS);
+	car.moveTo(0, 2748);
+}
+
+for(Bts car : gUVCars){
+	car.initSpeedCollection();
+	car.setSpeed(car.speed, SpeedUnits.MPS);
+	car.moveTo(2748, 5780);
+}
+
+for(Bts car : gDVCars){
+	car.initSpeedCollection();
+	car.setSpeed(car.speed, SpeedUnits.MPS);
+	car.moveTo(2748, 0);
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -181,7 +211,7 @@
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1481204795813</Id>
 					<Name><![CDATA[update_target]]></Name>
-					<X>-110</X><Y>190</Y>
+					<X>1360</X><Y>2560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -215,8 +245,8 @@ target_y = 365;]]></Body>
 			<EmbeddedObjects>
 				<EmbeddedObject>
 					<Id>0</Id>
-					<Name><![CDATA[gHCars]]></Name>
-					<X>-110</X><Y>90</Y>
+					<Name><![CDATA[gRHCars]]></Name>
+					<X>1510</X><Y>2470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -238,7 +268,7 @@ target_y = 365;]]></Body>
 							<Name><![CDATA[id]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[type]]></Name>
+							<Name><![CDATA[road]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[x]]></Name>
@@ -262,10 +292,10 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x / coordinates_index]]></Code>
+						<Code><![CDATA[self.x * scale_index - 19.5]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[365]]></Code>
+						<Code><![CDATA[self.y * scale_index + 7]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -295,7 +325,7 @@ target_y = 365;]]></Body>
 							<ColumnReference>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
-								<ItemName><![CDATA[type]]></ItemName>
+								<ItemName><![CDATA[road]]></ItemName>
 							</ColumnReference>
 							<Value Class="CodeValue">
 								<Code><![CDATA[1]]></Code>
@@ -323,12 +353,480 @@ target_y = 365;]]></Body>
 							<Key>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[Bts]]></ClassName>
-								<ItemName><![CDATA[type]]></ItemName>
+								<ItemName><![CDATA[road]]></ItemName>
 							</Key>
 							<Value>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
-								<ItemName><![CDATA[type]]></ItemName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Value>
+						</Item>	
+					</ParameterToDatabaseColumnMapping>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>0</Id>
+					<Name><![CDATA[gLHCars]]></Name>
+					<X>1510</X><Y>2500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1481626951572</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[stepmodel4]]></PackageName>
+						<ClassName><![CDATA[Bts]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[Bts]]></ClassName>
+							<ItemName><![CDATA[1480958474732]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[id]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[road]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[x]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[y]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[self.speed ]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[self.x * scale_index + 8]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[self.y * scale_index]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[initial_posision]]></ClassName>
+						</TableReference>
+						<Condition>
+							<ColumnReference>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</ColumnReference>
+							<Value Class="CodeValue">
+								<Code><![CDATA[2]]></Code>
+							</Value>
+							<Operator>EQUALS</Operator>
+						</Condition>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+					<ParameterToDatabaseColumnMapping>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Value>
+						</Item>	
+					</ParameterToDatabaseColumnMapping>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>0</Id>
+					<Name><![CDATA[gUVCars]]></Name>
+					<X>1510</X><Y>2530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1481627876152</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[stepmodel4]]></PackageName>
+						<ClassName><![CDATA[Bts]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[Bts]]></ClassName>
+							<ItemName><![CDATA[1480958474732]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[id]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[road]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[x]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[y]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[self.speed]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[self.x * scale_index]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[self.y * scale_index + 27 - 47]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[initial_posision]]></ClassName>
+						</TableReference>
+						<Condition>
+							<ColumnReference>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</ColumnReference>
+							<Value Class="CodeValue">
+								<Code><![CDATA[3]]></Code>
+							</Value>
+							<Operator>EQUALS</Operator>
+						</Condition>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+					<ParameterToDatabaseColumnMapping>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[speed]]></ItemName>
+							</Value>
+						</Item>	
+					</ParameterToDatabaseColumnMapping>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>0</Id>
+					<Name><![CDATA[gDVCars]]></Name>
+					<X>1510</X><Y>2555</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1481628055171</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[stepmodel4]]></PackageName>
+						<ClassName><![CDATA[Bts]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[Bts]]></ClassName>
+							<ItemName><![CDATA[1480958474732]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[id]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[road]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[x]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[y]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[self.speed]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[self.x * scale_index + 8]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[self.y * scale_index + 22 - 13]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+							<PackageName><![CDATA[stepmodel4]]></PackageName>
+							<ClassName><![CDATA[initial_posision]]></ClassName>
+						</TableReference>
+						<Condition>
+							<ColumnReference>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</ColumnReference>
+							<Value Class="CodeValue">
+								<Code><![CDATA[4]]></Code>
+							</Value>
+							<Operator>EQUALS</Operator>
+						</Condition>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+					<ParameterToDatabaseColumnMapping>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[road]]></ItemName>
 							</Value>
 						</Item>
 						<Item>
@@ -389,8 +887,8 @@ target_y = 365;]]></Body>
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>1366</Width>
-					<Height>500</Height>
+					<Width>5480</Width>
+					<Height>5480</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-16744448</FillColor>
 					<FillMaterial>null</FillMaterial>
@@ -423,8 +921,8 @@ target_y = 365;]]></Body>
 			<Shapes>
 				<Road>
 					<Id>1481110404095</Id>
-					<Name><![CDATA[road1]]></Name>
-					<X>0</X><Y>360</Y>
+					<Name><![CDATA[hRoad]]></Name>
+					<X>0</X><Y>2748</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -440,18 +938,15 @@ target_y = 365;]]></Body>
 					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
 					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
 					<ForwardLanesCount>1</ForwardLanesCount>
-					<Bidirectional>false</Bidirectional>
-					<BackwardLanesCount>2</BackwardLanesCount>
+					<Bidirectional>true</Bidirectional>
+					<BackwardLanesCount>1</BackwardLanesCount>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>590</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>565</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>615</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>1370</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>1345</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>1370</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>5480</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>5455</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>5455</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 
 
@@ -461,9 +956,95 @@ target_y = 365;]]></Body>
 
 				</RoadNetwork>
 
+				<RoadNetwork>
+					<Id>1481569155302</Id>
+					<Name><![CDATA[roadNetwork]]></Name>
+					<X>1680</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<DrivingDirection>RIGHT_HAND</DrivingDirection>
+					<LaneWidth Class="UnitValue">
+						<Value Class="Double">
+							3.5
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</LaneWidth>
+					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
+					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
+					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
+					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
+					<DirectionsDelimitingLineStyle>SINGLE</DirectionsDelimitingLineStyle>
+					<DirectionsDelimitingLineColor>-1</DirectionsDelimitingLineColor>
+					<ShowLaneConnectors>true</ShowLaneConnectors>
+					<SignalStateAnimationVisible>true</SignalStateAnimationVisible>
+
+			<Shapes>
+				<Road>
+					<Id>1481569152103</Id>
+					<Name><![CDATA[road]]></Name>
+					<X>2748</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<DelimiterWidth Class="UnitValue">
+						<Value Class="Double">
+							0
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</DelimiterWidth>
+					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
+					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
+					<ForwardLanesCount>1</ForwardLanesCount>
+					<Bidirectional>true</Bidirectional>
+					<BackwardLanesCount>1</BackwardLanesCount>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5480</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5455</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5455</Y><Z>0</Z></Point>
+					</Points>
+
+
+				</Road>
+
+			</Shapes>
+
+				</RoadNetwork>
+
+				<Rectangle>
+					<Id>1481569329407</Id>
+					<Name><![CDATA[rectangle1]]></Name>
+					<X>0</X><Y>2400</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>2000</Width>
+					<Height>200</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-14774017</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 				<EmbeddedObjectPresentation>
 					<Id>1480958518257</Id>
-					<Name><![CDATA[gHCars_presentation]]></Name>
+					<Name><![CDATA[gRHCars_presentation]]></Name>
 					<X>-10</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -471,7 +1052,7 @@ target_y = 365;]]></Body>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<ReplicationCode Class="CodeValue">
-						<Code><![CDATA[gHCars.size()]]></Code>
+						<Code><![CDATA[gRHCars.size()]]></Code>
 					</ReplicationCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -487,7 +1068,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481133386131</Id>
 					<Name><![CDATA[text]]></Name>
-					<X>200</X><Y>530</Y>
+					<X>210</X><Y>2450</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -509,7 +1090,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481133488710</Id>
 					<Name><![CDATA[text1]]></Name>
-					<X>200</X><Y>580</Y>
+					<X>210</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -531,7 +1112,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481134397944</Id>
 					<Name><![CDATA[text2]]></Name>
-					<X>450</X><Y>530</Y>
+					<X>460</X><Y>2450</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -553,7 +1134,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481134466475</Id>
 					<Name><![CDATA[firstCarSpeedText]]></Name>
-					<X>600</X><Y>530</Y>
+					<X>610</X><Y>2450</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -576,7 +1157,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481134798740</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>780</X><Y>530</Y>
+					<X>790</X><Y>2450</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -598,7 +1179,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481138343419</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>450</X><Y>580</Y>
+					<X>460</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -620,7 +1201,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481138424779</Id>
 					<Name><![CDATA[carsCountText]]></Name>
-					<X>650</X><Y>580</Y>
+					<X>660</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -642,7 +1223,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481144389492</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>780</X><Y>580</Y>
+					<X>790</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -664,7 +1245,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481144419698</Id>
 					<Name><![CDATA[debug1]]></Name>
-					<X>850</X><Y>580</Y>
+					<X>860</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -686,7 +1267,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481144470370</Id>
 					<Name><![CDATA[debug2]]></Name>
-					<X>950</X><Y>580</Y>
+					<X>960</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -708,7 +1289,7 @@ target_y = 365;]]></Body>
 				<Text>
 					<Id>1481144482426</Id>
 					<Name><![CDATA[debug3]]></Name>
-					<X>1050</X><Y>580</Y>
+					<X>1060</X><Y>2500</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -727,13 +1308,82 @@ target_y = 365;]]></Body>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<EmbeddedObjectPresentation>
+					<Id>1481626951572</Id>
+					<Name><![CDATA[gLHCars_presentation]]></Name>
+					<X>1600</X><Y>2500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[gLHCars.size()]]></Code>
+					</ReplicationCode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
+					<Id>1481627876152</Id>
+					<Name><![CDATA[gUVCars_presentation]]></Name>
+					<X>1720</X><Y>2520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[gUVCars.size()]]></Code>
+					</ReplicationCode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
+					<Id>1481628055171</Id>
+					<Name><![CDATA[gDVCars_presentation]]></Name>
+					<X>1610</X><Y>2555</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[gDVCars.size()]]></Code>
+					</ReplicationCode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
 			</Shapes>
 			<Controls>
 				<Control Type="Button">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481026446538</Id>
 					<Name><![CDATA[moveBtn]]></Name>
-					<X>50</X><Y>520</Y>
+					<X>60</X><Y>2440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -745,7 +1395,7 @@ target_y = 365;]]></Body>
 						<TextColor/>
 						<Enabled>true</Enabled>
 						<ActionCode><![CDATA[go();
-carsCountText.setText(gHCars.size());]]></ActionCode>
+carsCountText.setText(gRHCars.size());]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="18" Style="0"/>
@@ -756,7 +1406,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481133363895</Id>
 					<Name><![CDATA[editbox]]></Name>
-					<X>300</X><Y>520</Y>
+					<X>310</X><Y>2440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -779,7 +1429,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481133488719</Id>
 					<Name><![CDATA[editbox1]]></Name>
-					<X>300</X><Y>570</Y>
+					<X>310</X><Y>2490</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -802,7 +1452,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481134205776</Id>
 					<Name><![CDATA[button]]></Name>
-					<X>50</X><Y>570</Y>
+					<X>60</X><Y>2490</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -813,7 +1463,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 						<FillColor/>
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[for(Bts bts : gHCars){
+						<ActionCode><![CDATA[for(Bts bts : gLHCars){
 	bts.stop();
 }]]></ActionCode>
 					</BasicProperties>
@@ -826,7 +1476,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481134758404</Id>
 					<Name><![CDATA[button1]]></Name>
-					<X>850</X><Y>520</Y>
+					<X>860</X><Y>2440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -837,7 +1487,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 						<FillColor/>
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[for(Bts car : gHCars){
+						<ActionCode><![CDATA[for(Bts car : gRHCars){
 	car.setSpeed(0);
 }]]></ActionCode>
 					</BasicProperties>
@@ -850,7 +1500,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1481204870922</Id>
 					<Name><![CDATA[button2]]></Name>
-					<X>200</X><Y>610</Y>
+					<X>210</X><Y>2530</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -866,6 +1516,29 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="14" Style="0"/>
 						<LabelText><![CDATA[Update target]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1481570885034</Id>
+					<Name><![CDATA[button3]]></Name>
+					<X>860</X><Y>2530</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="240" Height="30" 
+				AsObject="true">
+                        <EmbeddedIcon>false</EmbeddedIcon>				
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[debug1.setText(gRHCars.get(1).getX());
+debug2.setText(gLHCars.get(1).getX());]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="0"/>
+						<LabelText><![CDATA[Update Debug]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 			</Controls>
@@ -996,7 +1669,7 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1480958474735</Id>
-					<Name><![CDATA[type]]></Name>
+					<Name><![CDATA[road]]></Name>
 					<X>50</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1118,8 +1791,8 @@ carsCountText.setText(gHCars.size());]]></ActionCode>
 	}
 }
 
-if(id == 3){
-	main.debug3.setText(speedCollection.toString());
+if(speedCollection.size() != 0){
+	speed = speedCollection.get(0);
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -1134,17 +1807,32 @@ if(id == 3){
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[double new_speed;
 
-main.debug1.setText(now_speed_index);
+traceln(speedCollection.toString());
+traceln(speedCollection.size());
+now_speed_index = speedCollection.indexOf(speed);
 
-if(!isMoving()){
-	new_speed = speed;
-} else if(now_speed_index == speedCollection.size()){
-	new_speed = speedCollection.get(now_speed_index);
+traceln(id + "-" + now_speed_index + "-" + speedCollection.size());
+
+if(speedCollection.size() != 0){
+	if(!isMoving()){
+		new_speed = speed;
+	} else if(now_speed_index == (speedCollection.size()-1)){
+		new_speed = speedCollection.get(now_speed_index);
+	} else {
+		new_speed = speedCollection.get(now_speed_index + 1);
+		now_speed_index++;
+	}
 } else {
-	new_speed = speedCollection.get(now_speed_index + 1);
-	now_speed_index++;
+	new_speed = 0;
 }
 
+if(id == 1){
+	main.debug1.setText(now_speed_index);
+}
+
+if(id == 1){
+	main.debug3.setText(new_speed);
+}
 return new_speed;]]></Body>
 				</Function>
 			</Functions>
@@ -1182,9 +1870,7 @@ return new_speed;]]></Body>
 							<ValueColumnReference>
 							</ValueColumnReference>
 					</IntervalsQuery>
-					<Action><![CDATA[if(speedCollection.size() == 0){ initSpeedCollection(); }
-
-speed = nextSpeed();
+					<Action><![CDATA[speed = nextSpeed();
 setSpeed(speed);
 
 if(id == 3){ 
