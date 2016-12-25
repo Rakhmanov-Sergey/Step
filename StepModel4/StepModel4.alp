@@ -97,6 +97,53 @@
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 			</ScaleRuler>
 			<ConnectionsId>1480954021706</ConnectionsId>
+			<TrafficLight>
+				<Id>1482666843494</Id>
+				<Name><![CDATA[trafficLight]]></Name>
+				<X>300</X><Y>8440</Y>
+				<Label><X>0</X><Y>-20</Y></Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>true</ShowLabel>
+				<Type>JUNCTION_STOP_LINES</Type>
+				<Junction>1482617223384</Junction>
+				<Line>1482617223390</Line>
+				<Line>1482617223391</Line>
+				<Line>1482617240315</Line>
+				<Line>1482617259485</Line>
+				<Duration Class="CodeValue">
+					<Code><![CDATA[10]]></Code>
+				</Duration>
+				<Duration Class="CodeValue">
+					<Code><![CDATA[3]]></Code>
+				</Duration>
+				<Duration Class="CodeValue">
+					<Code><![CDATA[10]]></Code>
+				</Duration>
+				<Duration Class="CodeValue">
+					<Code><![CDATA[3]]></Code>
+				</Duration>
+				<DefaultState>RED</DefaultState>
+				<DefaultState>YELLOW</DefaultState>
+				<DefaultState>RED</DefaultState>
+				<DefaultState>YELLOW</DefaultState>
+				<State>GREEN</State>
+				<State>YELLOW</State>
+				<State>RED</State>
+				<State>YELLOW</State>
+				<State>RED</State>
+				<State>YELLOW</State>
+				<State>GREEN</State>
+				<State>YELLOW</State>
+				<State>RED</State>
+				<State>YELLOW</State>
+				<State>GREEN</State>
+				<State>YELLOW</State>
+				<State>GREEN</State>
+				<State>YELLOW</State>
+				<State>RED</State>
+				<State>YELLOW</State>
+			</TrafficLight>
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1481133688448</Id>
@@ -1682,7 +1729,7 @@ target_y = 365;]]></Body>
 						<Parameter>
 							<Name><![CDATA[road]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[roadR]]></Code>
+								<Code><![CDATA[roadL]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3071,6 +3118,133 @@ target_y = 365;]]></Body>
 					<QuantityColumn>
 					</QuantityColumn>
 				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1482667616723</Id>
+					<Name><![CDATA[roadNetworkDescriptor]]></Name>
+					<X>220</X><Y>8440</Y>
+					<Label><X>-60</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.road]]></PackageName>
+						<ClassName><![CDATA[RoadNetworkDescriptor]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.road]]></PackageName>
+							<ClassName><![CDATA[RoadNetworkDescriptor]]></ClassName>
+							<ItemName><![CDATA[1431616410057]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[roadNetwork]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[roadNetwork3]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[roadSectionLength]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableDensityMap]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[greenSpeedLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[redSpeedLevel]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[densityMapTransparency]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnterNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnterRoad]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitRoad]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnterIntersection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitIntersection]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onChangeLane]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onStop]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onResumeMoving]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onClickCar]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[automaticallyResolveDeadlocks]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[geometricCalculationsPrecision]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[temporalCalculationsPrecision]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[10]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
 			</EmbeddedObjects>
 
 			<Shapes>
@@ -3710,7 +3884,7 @@ target_y = 365;]]></Body>
 			<Shapes>
 				<RoadStopline>
 					<Id>1482617223390</Id>
-					<Name><![CDATA[stopLine]]></Name>
+					<Name><![CDATA[stopLineLR]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3770,7 +3944,7 @@ target_y = 365;]]></Body>
 			<Shapes>
 				<RoadStopline>
 					<Id>1482617223391</Id>
-					<Name><![CDATA[stopLine1]]></Name>
+					<Name><![CDATA[stopLineUD]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3830,7 +4004,7 @@ target_y = 365;]]></Body>
 			<Shapes>
 				<RoadStopline>
 					<Id>1482617240315</Id>
-					<Name><![CDATA[stopLine2]]></Name>
+					<Name><![CDATA[stopLineDU]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3890,7 +4064,7 @@ target_y = 365;]]></Body>
 			<Shapes>
 				<RoadStopline>
 					<Id>1482617259485</Id>
-					<Name><![CDATA[stopLine3]]></Name>
+					<Name><![CDATA[stopLineRL]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -4361,12 +4535,27 @@ debug2.setText(gLHCars.get(1).getX());]]></ActionCode>
 				<Area>
 					<Id>1482235320459</Id>
 					<Name><![CDATA[old_start]]></Name>
-					<X>0</X><Y>8490</Y>
+					<X>0</X><Y>8400</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<Title><![CDATA[Old Crossing Start Point]]></Title>
+					<Title><![CDATA[Old  Start Point]]></Title>
+					<Width>100</Width>
+					<Height>100</Height>
+					<AlignTo>TOP_LEFT</AlignTo>
+					<Scaling>NONE</Scaling>
+					<Zoom>1.0</Zoom>
+				</Area>
+				<Area>
+					<Id>1482667512413</Id>
+					<Name><![CDATA[old_crossing]]></Name>
+					<X>2580</X><Y>8530</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Old Crossing]]></Title>
 					<Width>100</Width>
 					<Height>100</Height>
 					<AlignTo>TOP_LEFT</AlignTo>
