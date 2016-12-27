@@ -277,6 +277,126 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482865720615</Id>
+					<Name><![CDATA[LRCars_displacement]]></Name>
+					<X>1670</X><Y>2470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[5]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482865802674</Id>
+					<Name><![CDATA[RLCars_displacement]]></Name>
+					<X>1670</X><Y>2500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[4]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482865806598</Id>
+					<Name><![CDATA[UDCars_displacement]]></Name>
+					<X>1670</X><Y>2530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-5]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482865808791</Id>
+					<Name><![CDATA[DUCars_displacement]]></Name>
+					<X>1670</X><Y>2560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[6]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482866328481</Id>
+					<Name><![CDATA[STATE_MOVING_IN]]></Name>
+					<X>1820</X><Y>2470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482866435936</Id>
+					<Name><![CDATA[STATE_MOVING_TO_CROSSING]]></Name>
+					<X>1820</X><Y>2500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482866499430</Id>
+					<Name><![CDATA[STATE_MOVING_OUT]]></Name>
+					<X>1820</X><Y>2530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[3]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1482866905481</Id>
+					<Name><![CDATA[bts_passes]]></Name>
+					<X>470</X><Y>2560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -555,28 +675,28 @@
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[for(Bts car : gRHCars){
+					<Body><![CDATA[for(Bts car : gLRCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(5780, 2748);	
+	car.moveTo(0, 2748 + LRCars_displacement);	
 }
 
-for(Bts car : gLHCars){
+for(Bts car : gRLCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(0, 2748);
+	car.moveTo(5480, 2740 + RLCars_displacement);
 }
 
-for(Bts car : gUVCars){
+for(Bts car : gUDCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(2748, 5780);
+	car.moveTo(2748 + UDCars_displacement, 0);
 }
 
-for(Bts car : gDVCars){
+for(Bts car : gDUCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(2748, 0);
+	car.moveTo(2748 + DUCars_displacement, 5480);
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -618,7 +738,7 @@ target_y = 365;]]></Body>
 			<EmbeddedObjects>
 				<EmbeddedObject>
 					<Id>0</Id>
-					<Name><![CDATA[gRHCars]]></Name>
+					<Name><![CDATA[gLRCars]]></Name>
 					<X>1510</X><Y>2470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -652,6 +772,12 @@ target_y = 365;]]></Body>
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[state]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[STATE_MOVING_IN]]></Code>
+							</Value>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -668,7 +794,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index - 19.5]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index + 7]]></Code>
+						<Code><![CDATA[self.y * scale_index + LRCars_displacement]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -785,7 +911,7 @@ target_y = 365;]]></Body>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>0</Id>
-					<Name><![CDATA[gLHCars]]></Name>
+					<Name><![CDATA[gRLCars]]></Name>
 					<X>1510</X><Y>2500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -819,6 +945,12 @@ target_y = 365;]]></Body>
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[state]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[STATE_MOVING_IN]]></Code>
+							</Value>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -835,7 +967,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + 8]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index]]></Code>
+						<Code><![CDATA[self.y * scale_index + RLCars_displacement]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -952,7 +1084,7 @@ target_y = 365;]]></Body>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>0</Id>
-					<Name><![CDATA[gUVCars]]></Name>
+					<Name><![CDATA[gUDCars]]></Name>
 					<X>1510</X><Y>2530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -986,6 +1118,12 @@ target_y = 365;]]></Body>
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[state]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[STATE_MOVING_IN]]></Code>
+							</Value>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -999,7 +1137,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index]]></Code>
+						<Code><![CDATA[self.x * scale_index + UDCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + 27 - 47]]></Code>
@@ -1119,7 +1257,7 @@ target_y = 365;]]></Body>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>0</Id>
-					<Name><![CDATA[gDVCars]]></Name>
+					<Name><![CDATA[gDUCars]]></Name>
 					<X>1510</X><Y>2555</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1153,6 +1291,12 @@ target_y = 365;]]></Body>
 						<Parameter>
 							<Name><![CDATA[speed]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[state]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[STATE_MOVING_IN]]></Code>
+							</Value>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1166,7 +1310,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index + 8]]></Code>
+						<Code><![CDATA[self.x * scale_index + DUCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + 22 - 13]]></Code>
@@ -3422,7 +3566,7 @@ target_y = 365;]]></Body>
 				</Rectangle>
 				<EmbeddedObjectPresentation>
 					<Id>1480958518257</Id>
-					<Name><![CDATA[gRHCars_presentation]]></Name>
+					<Name><![CDATA[gLRCars_presentation]]></Name>
 					<X>-10</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3430,7 +3574,7 @@ target_y = 365;]]></Body>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<ReplicationCode Class="CodeValue">
-						<Code><![CDATA[gRHCars.size()]]></Code>
+						<Code><![CDATA[gLRCars.size()]]></Code>
 					</ReplicationCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -3688,7 +3832,7 @@ target_y = 365;]]></Body>
 				</Text>
 				<EmbeddedObjectPresentation>
 					<Id>1481626951572</Id>
-					<Name><![CDATA[gLHCars_presentation]]></Name>
+					<Name><![CDATA[gRLCars_presentation]]></Name>
 					<X>1600</X><Y>2500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3696,7 +3840,7 @@ target_y = 365;]]></Body>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<ReplicationCode Class="CodeValue">
-						<Code><![CDATA[gLHCars.size()]]></Code>
+						<Code><![CDATA[gRLCars.size()]]></Code>
 					</ReplicationCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -3711,7 +3855,7 @@ target_y = 365;]]></Body>
 				</EmbeddedObjectPresentation>
 				<EmbeddedObjectPresentation>
 					<Id>1481627876152</Id>
-					<Name><![CDATA[gUVCars_presentation]]></Name>
+					<Name><![CDATA[gUDCars_presentation]]></Name>
 					<X>1600</X><Y>2530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3719,7 +3863,7 @@ target_y = 365;]]></Body>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<ReplicationCode Class="CodeValue">
-						<Code><![CDATA[gUVCars.size()]]></Code>
+						<Code><![CDATA[gUDCars.size()]]></Code>
 					</ReplicationCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -3734,7 +3878,7 @@ target_y = 365;]]></Body>
 				</EmbeddedObjectPresentation>
 				<EmbeddedObjectPresentation>
 					<Id>1481628055171</Id>
-					<Name><![CDATA[gDVCars_presentation]]></Name>
+					<Name><![CDATA[gDUCars_presentation]]></Name>
 					<X>1610</X><Y>2555</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3742,7 +3886,7 @@ target_y = 365;]]></Body>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<ReplicationCode Class="CodeValue">
-						<Code><![CDATA[gDVCars.size()]]></Code>
+						<Code><![CDATA[gDUCars.size()]]></Code>
 					</ReplicationCode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -3768,8 +3912,8 @@ target_y = 365;]]></Body>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<OnDrawCode><![CDATA[if(enable_camera){
-	if(gRHCars.get(1).getX() < 2600){
-		getPresentation().getPanel().setOffsets(300-gRHCars.get(1).getX(), 300-gRHCars.get(1).getY());
+	if(gLRCars.get(1).getX() < 2600){
+		getPresentation().getPanel().setOffsets(300-gLRCars.get(1).getX(), 300-gLRCars.get(1).getY());
 	} else {
 		getPresentation().getPanel().setOffsets(300-2740, 300-2740);
 		getPresentation().getPanel().setZoom(1.5);
@@ -4310,7 +4454,7 @@ target_y = 365;]]></Body>
 						<TextColor/>
 						<Enabled>true</Enabled>
 						<ActionCode><![CDATA[go();
-carsCountText.setText(gRHCars.size());]]></ActionCode>
+carsCountText.setText(gLRCars.size());]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="18" Style="0"/>
@@ -4378,9 +4522,6 @@ carsCountText.setText(gRHCars.size());]]></ActionCode>
 						<FillColor/>
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[for(Bts bts : gLHCars){
-	bts.stop();
-}]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="18" Style="0"/>
@@ -4402,9 +4543,6 @@ carsCountText.setText(gRHCars.size());]]></ActionCode>
 						<FillColor/>
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[for(Bts car : gRHCars){
-	car.setSpeed(0);
-}]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="14" Style="0"/>
@@ -4448,8 +4586,6 @@ carsCountText.setText(gRHCars.size());]]></ActionCode>
 						<FillColor/>
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[debug1.setText(gRHCars.get(1).getX());
-debug2.setText(gLHCars.get(1).getX());]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="14" Style="0"/>
@@ -4597,6 +4733,7 @@ debug2.setText(gLHCars.get(1).getX());]]></ActionCode>
 					<Code><![CDATA[10]]></Code>
 					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 				</VelocityCode>
+				<OnArrival><![CDATA[nextPoint();]]></OnArrival>
 			</AgentProperties>
 			<EnvironmentProperties>
 					<EnableSteps>false</EnableSteps>
@@ -4776,6 +4913,28 @@ debug2.setText(gLHCars.get(1).getX());]]></ActionCode>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1482866284452</Id>
+					<Name><![CDATA[state]]></Name>
+					<X>50</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<NumericType><![CDATA[double]]></NumericType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1482866284450</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1480965609999</Id>
 					<Name><![CDATA[speedCollection]]></Name>
@@ -4853,6 +5012,61 @@ if(id == 1){
 	main.debug3.setText(new_speed);
 }
 return new_speed;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1482867262388</Id>
+					<Name><![CDATA[nextPoint]]></Name>
+					<X>-150</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[if(road == 1){
+	if(state == main.STATE_MOVING_IN){
+		moveTo(2740, 2748 + main.LRCars_displacement);
+		state = main.STATE_MOVING_TO_CROSSING;
+
+	} else if(state == main.STATE_MOVING_TO_CROSSING){
+		main.bts_passes++;
+		moveTo(5480, 2748 + main.LRCars_displacement);
+		state = main.STATE_MOVING_OUT;
+	}
+
+} else if(road == 2){
+	if(state == main.STATE_MOVING_IN){
+		moveTo(2740, 2740 + main.RLCars_displacement);
+		state = main.STATE_MOVING_TO_CROSSING;
+
+	} else if(state == main.STATE_MOVING_TO_CROSSING){
+		main.bts_passes++;
+		moveTo(0, 2740 + main.RLCars_displacement);
+		state = main.STATE_MOVING_OUT;
+	}
+
+} else if(road == 3){
+	if(state == main.STATE_MOVING_IN){
+		moveTo(2748 + main.UDCars_displacement, 2740);
+		state = main.STATE_MOVING_TO_CROSSING;
+
+	} else if(state == main.STATE_MOVING_TO_CROSSING){
+		main.bts_passes++;
+		moveTo(2748 + main.UDCars_displacement, 5480);
+		state = main.STATE_MOVING_OUT;
+	}
+
+} else if(road == 4){
+	if(state == main.STATE_MOVING_IN){
+		moveTo(2748 + main.DUCars_displacement, 2740);
+		state = main.STATE_MOVING_TO_CROSSING;
+
+	} else if(state == main.STATE_MOVING_TO_CROSSING){
+		main.bts_passes++;
+		moveTo(2748 + main.DUCars_displacement, 0);
+		state = main.STATE_MOVING_OUT;
+	}
+}]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
