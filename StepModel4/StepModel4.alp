@@ -288,7 +288,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[5]]></Code>
+							<Code><![CDATA[-3]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -303,7 +303,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[4]]></Code>
+							<Code><![CDATA[-5]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -333,7 +333,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[6]]></Code>
+							<Code><![CDATA[-3]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -690,25 +690,25 @@
 					<Body><![CDATA[for(Bts car : gLRCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(0, 2748 + LRCars_displacement);	
+	car.moveTo(0, car.y * scale_index + LRCars_displacement);	
 }
 
 for(Bts car : gRLCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(5480, 2740 + RLCars_displacement);
+	car.moveTo(5480, car.y * scale_index + RLCars_displacement);
 }
 
 for(Bts car : gUDCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(2748 + UDCars_displacement, 0);
+	car.moveTo(car.x * scale_index + UDCars_displacement, 0);
 }
 
 for(Bts car : gDUCars){
 	car.initSpeedCollection();
 	car.setSpeed(car.speed, SpeedUnits.MPS);
-	car.moveTo(2748 + DUCars_displacement, 5480);
+	car.moveTo(car.x * scale_index + DUCars_displacement, 5480);
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -790,6 +790,9 @@ target_y = 365;]]></Body>
 								<Code><![CDATA[STATE_MOVING_IN]]></Code>
 							</Value>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[lane]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -803,7 +806,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index - 19.5]]></Code>
+						<Code><![CDATA[self.x * scale_index]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + LRCars_displacement]]></Code>
@@ -918,6 +921,18 @@ target_y = 365;]]></Body>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
 								<ItemName><![CDATA[speed]]></ItemName>
 							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Value>
 						</Item>	
 					</ParameterToDatabaseColumnMapping>
 				</EmbeddedObject>
@@ -963,6 +978,9 @@ target_y = 365;]]></Body>
 								<Code><![CDATA[STATE_MOVING_IN]]></Code>
 							</Value>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[lane]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -976,7 +994,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index + 8]]></Code>
+						<Code><![CDATA[self.x * scale_index]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + RLCars_displacement]]></Code>
@@ -1084,6 +1102,18 @@ target_y = 365;]]></Body>
 							<Key>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
 								<ItemName><![CDATA[speed]]></ItemName>
 							</Key>
 							<Value>
@@ -1136,6 +1166,9 @@ target_y = 365;]]></Body>
 								<Code><![CDATA[STATE_MOVING_IN]]></Code>
 							</Value>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[lane]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1152,7 +1185,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + UDCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index + 27 - 47]]></Code>
+						<Code><![CDATA[self.y * scale_index]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1257,6 +1290,18 @@ target_y = 365;]]></Body>
 							<Key>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
 								<ItemName><![CDATA[speed]]></ItemName>
 							</Key>
 							<Value>
@@ -1309,6 +1354,9 @@ target_y = 365;]]></Body>
 								<Code><![CDATA[STATE_MOVING_IN]]></Code>
 							</Value>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[lane]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1325,7 +1373,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + DUCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index + 22 - 13]]></Code>
+						<Code><![CDATA[self.y * scale_index]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1424,6 +1472,18 @@ target_y = 365;]]></Body>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
 								<ItemName><![CDATA[y]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[Bts]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
 							</Value>
 						</Item>
 						<Item>
@@ -1578,6 +1638,18 @@ target_y = 365;]]></Body>
 							<Value>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
+								<ItemName><![CDATA[lane]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[OldCar]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[stepmodel4]]></PackageName>
+								<ClassName><![CDATA[initial_posision]]></ClassName>
 								<ItemName><![CDATA[x]]></ItemName>
 							</Value>
 						</Item>
@@ -1585,24 +1657,12 @@ target_y = 365;]]></Body>
 							<Key>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[OldCar]]></ClassName>
-								<ItemName><![CDATA[y]]></ItemName>
-							</Key>
-							<Value>
-								<PackageName><![CDATA[stepmodel4]]></PackageName>
-								<ClassName><![CDATA[initial_posision]]></ClassName>
-								<ItemName><![CDATA[y]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
-								<PackageName><![CDATA[stepmodel4]]></PackageName>
-								<ClassName><![CDATA[OldCar]]></ClassName>
 								<ItemName><![CDATA[speed]]></ItemName>
 							</Key>
 							<Value>
 								<PackageName><![CDATA[stepmodel4]]></PackageName>
 								<ClassName><![CDATA[initial_posision]]></ClassName>
-								<ItemName><![CDATA[speed]]></ItemName>
+								<ItemName><![CDATA[y]]></ItemName>
 							</Value>
 						</Item>	
 					</ParameterToDatabaseColumnMapping>
@@ -1673,7 +1733,7 @@ target_y = 365;]]></Body>
 								<ColumnReference>
 									<PackageName><![CDATA[stepmodel4]]></PackageName>
 									<ClassName><![CDATA[initial_posision]]></ClassName>
-									<ItemName><![CDATA[time]]></ItemName>
+									<ItemName><![CDATA[speed]]></ItemName>
 								</ColumnReference>
 							</Value>
 						</Parameter>
@@ -3504,9 +3564,9 @@ target_y = 365;]]></Body>
 					</DelimiterWidth>
 					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
 					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
-					<ForwardLanesCount>1</ForwardLanesCount>
+					<ForwardLanesCount>2</ForwardLanesCount>
 					<Bidirectional>true</Bidirectional>
-					<BackwardLanesCount>1</BackwardLanesCount>
+					<BackwardLanesCount>2</BackwardLanesCount>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
@@ -3567,9 +3627,9 @@ target_y = 365;]]></Body>
 					</DelimiterWidth>
 					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
 					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
-					<ForwardLanesCount>1</ForwardLanesCount>
+					<ForwardLanesCount>2</ForwardLanesCount>
 					<Bidirectional>true</Bidirectional>
-					<BackwardLanesCount>1</BackwardLanesCount>
+					<BackwardLanesCount>2</BackwardLanesCount>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
@@ -3924,7 +3984,7 @@ target_y = 365;]]></Body>
 				<EmbeddedObjectPresentation>
 					<Id>1481628055171</Id>
 					<Name><![CDATA[gDUCars_presentation]]></Name>
-					<X>1610</X><Y>2555</Y>
+					<X>1600</X><Y>2560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4984,7 +5044,7 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 				<Variable Class="Parameter">
 					<Id>1480958474736</Id>
 					<Name><![CDATA[x]]></Name>
-					<X>50</X><Y>150</Y>
+					<X>50</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5006,7 +5066,7 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 				<Variable Class="Parameter">
 					<Id>1480958474737</Id>
 					<Name><![CDATA[y]]></Name>
-					<X>50</X><Y>200</Y>
+					<X>50</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5028,7 +5088,7 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 				<Variable Class="Parameter">
 					<Id>1480958474738</Id>
 					<Name><![CDATA[speed]]></Name>
-					<X>50</X><Y>250</Y>
+					<X>50</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5050,7 +5110,7 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 				<Variable Class="Parameter">
 					<Id>1482866284452</Id>
 					<Name><![CDATA[state]]></Name>
-					<X>50</X><Y>290</Y>
+					<X>50</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5062,6 +5122,28 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
 							<Id>1482866284450</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1483519224657</Id>
+					<Name><![CDATA[lane]]></Name>
+					<X>50</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<NumericType><![CDATA[double]]></NumericType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1483519224655</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -5102,6 +5184,7 @@ carsCountText.setText(gLRCars.size());]]></ActionCode>
 			
 	if(id_index == id){
 		speedCollection.add(speed_value);
+		traceln(speed_value);
 	}
 }
 
@@ -5136,13 +5219,6 @@ if(speedCollection.size() != 0){
 	new_speed = 0;
 }
 
-if(id == 1){
-	main.debug1.setText(now_speed_index);
-}
-
-if(id == 1){
-	main.debug3.setText(new_speed);
-}
 return new_speed;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -5157,50 +5233,49 @@ return new_speed;]]></Body>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[if(road == 1){
 	if(state == main.STATE_MOVING_IN){
-		main.carSourceLR.inject(1);
-		traceln("inject");
-		moveTo(2740, 2748 + main.LRCars_displacement);
+		//main.carSourceLR.inject(1);
+		moveTo(2740, y * main.scale_index + main.LRCars_displacement);
 		state = main.STATE_MOVING_TO_CROSSING;
 
 	} else if(state == main.STATE_MOVING_TO_CROSSING){
 		main.bts_passes++;
-		moveTo(5480, 2748 + main.LRCars_displacement);
+		moveTo(5480, y * main.scale_index + main.LRCars_displacement);
 		state = main.STATE_MOVING_OUT;
 	}
 
 } else if(road == 2){
 	if(state == main.STATE_MOVING_IN){
-		main.carSourceRL.inject(1);
-		moveTo(2740, 2740 + main.RLCars_displacement);
+		//main.carSourceRL.inject(1);
+		moveTo(2740, y * main.scale_index + main.RLCars_displacement);
 		state = main.STATE_MOVING_TO_CROSSING;
 
 	} else if(state == main.STATE_MOVING_TO_CROSSING){
 		main.bts_passes++;
-		moveTo(0, 2740 + main.RLCars_displacement);
+		moveTo(0, y * main.scale_index + main.RLCars_displacement);
 		state = main.STATE_MOVING_OUT;
 	}
 
 } else if(road == 3){
 	if(state == main.STATE_MOVING_IN){
-		main.carSourceUD.inject(1);
-		moveTo(2748 + main.UDCars_displacement, 2740);
+		//main.carSourceUD.inject(1);
+		moveTo(x * main.scale_index + main.UDCars_displacement, 2740);
 		state = main.STATE_MOVING_TO_CROSSING;
 
 	} else if(state == main.STATE_MOVING_TO_CROSSING){
 		main.bts_passes++;
-		moveTo(2748 + main.UDCars_displacement, 5480);
+		moveTo(x * main.scale_index + main.UDCars_displacement, 5480);
 		state = main.STATE_MOVING_OUT;
 	}
 
 } else if(road == 4){
 	if(state == main.STATE_MOVING_IN){
-		main.carSourceDU.inject(1);
-		moveTo(2748 + main.DUCars_displacement, 2740);
+		//main.carSourceDU.inject(1);
+		moveTo(x * main.scale_index + main.DUCars_displacement, 2740);
 		state = main.STATE_MOVING_TO_CROSSING;
 
 	} else if(state == main.STATE_MOVING_TO_CROSSING){
 		main.bts_passes++;
-		moveTo(2748 + main.DUCars_displacement, 0);
+		moveTo(x * main.scale_index + main.DUCars_displacement, 0);
 		state = main.STATE_MOVING_OUT;
 	}
 }]]></Body>
