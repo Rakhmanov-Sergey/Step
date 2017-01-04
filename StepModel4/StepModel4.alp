@@ -5424,7 +5424,7 @@ if(id == 3){
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>0.0</Rotation>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
