@@ -938,7 +938,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index]]></Code>
+						<Code><![CDATA[self.x * scale_index - 19]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + LRCars_displacement]]></Code>
@@ -1126,7 +1126,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index]]></Code>
+						<Code><![CDATA[self.x * scale_index - 19]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + RLCars_displacement]]></Code>
@@ -1317,7 +1317,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + UDCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index]]></Code>
+						<Code><![CDATA[self.y * scale_index -19]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1505,7 +1505,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + DUCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index]]></Code>
+						<Code><![CDATA[self.y * scale_index - 19]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
