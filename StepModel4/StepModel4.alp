@@ -243,7 +243,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[200]]></Code>
+							<Code><![CDATA[400]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -938,7 +938,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index - 19]]></Code>
+						<Code><![CDATA[self.x * scale_index - 38]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + LRCars_displacement]]></Code>
@@ -1126,7 +1126,7 @@ target_y = 365;]]></Body>
 					</InitialSpeedCode>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
-						<Code><![CDATA[self.x * scale_index - 19]]></Code>
+						<Code><![CDATA[self.x * scale_index]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
 						<Code><![CDATA[self.y * scale_index + RLCars_displacement]]></Code>
@@ -1317,7 +1317,7 @@ target_y = 365;]]></Body>
 						<Code><![CDATA[self.x * scale_index + UDCars_displacement]]></Code>
 					</XCode>
 					<YCode Class="CodeValue">
-						<Code><![CDATA[self.y * scale_index -19]]></Code>
+						<Code><![CDATA[self.y * scale_index - 19]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -4707,9 +4707,9 @@ target_y = 365;]]></Body>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<RoadNetwork>
-					<Id>1481110414188</Id>
-					<Name><![CDATA[roadNetwork1]]></Name>
-					<X>0</X><Y>300</Y>
+					<Id>1481569155302</Id>
+					<Name><![CDATA[roadNetwork]]></Name>
+					<X>1680</X><Y>-3</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4728,7 +4728,70 @@ target_y = 365;]]></Body>
 					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
 					<DirectionsDelimitingLineStyle>SINGLE</DirectionsDelimitingLineStyle>
 					<DirectionsDelimitingLineColor>-1</DirectionsDelimitingLineColor>
-					<ShowLaneConnectors>true</ShowLaneConnectors>
+					<ShowLaneConnectors>false</ShowLaneConnectors>
+					<SignalStateAnimationVisible>true</SignalStateAnimationVisible>
+
+			<Shapes>
+				<Road>
+					<Id>1481569152103</Id>
+					<Name><![CDATA[road]]></Name>
+					<X>2748</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<DelimiterWidth Class="UnitValue">
+						<Value Class="Double">
+							0
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</DelimiterWidth>
+					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
+					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
+					<ForwardLanesCount>2</ForwardLanesCount>
+					<Bidirectional>true</Bidirectional>
+					<BackwardLanesCount>2</BackwardLanesCount>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5470</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5445</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>5445</Y><Z>0</Z></Point>
+					</Points>
+
+
+				</Road>
+
+			</Shapes>
+
+				</RoadNetwork>
+
+				<RoadNetwork>
+					<Id>1483721195877</Id>
+					<Name><![CDATA[roadNetwork2]]></Name>
+					<X>0</X><Y>2748</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<DrivingDirection>RIGHT_HAND</DrivingDirection>
+					<LaneWidth Class="UnitValue">
+						<Value Class="Double">
+							3.5
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</LaneWidth>
+					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
+					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
+					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
+					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
+					<DirectionsDelimitingLineStyle>SINGLE</DirectionsDelimitingLineStyle>
+					<DirectionsDelimitingLineColor>-1</DirectionsDelimitingLineColor>
+					<ShowLaneConnectors>false</ShowLaneConnectors>
 					<SignalStateAnimationVisible>true</SignalStateAnimationVisible>
 
 			<Shapes>
@@ -4769,69 +4832,29 @@ target_y = 365;]]></Body>
 
 				</RoadNetwork>
 
-				<RoadNetwork>
-					<Id>1481569155302</Id>
-					<Name><![CDATA[roadNetwork]]></Name>
-					<X>1680</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
+				<Rectangle>
+					<Id>1483721246555</Id>
+					<Name><![CDATA[rectangle4]]></Name>
+					<X>2729</X><Y>2729</Y>
+					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<DrivingDirection>RIGHT_HAND</DrivingDirection>
-					<LaneWidth Class="UnitValue">
-						<Value Class="Double">
-							3.5
-						</Value>
-						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-					</LaneWidth>
-					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
-					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
-					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
-					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
-					<DirectionsDelimitingLineStyle>SINGLE</DirectionsDelimitingLineStyle>
-					<DirectionsDelimitingLineColor>-1</DirectionsDelimitingLineColor>
-					<ShowLaneConnectors>true</ShowLaneConnectors>
-					<SignalStateAnimationVisible>true</SignalStateAnimationVisible>
-
-			<Shapes>
-				<Road>
-					<Id>1481569152103</Id>
-					<Name><![CDATA[road]]></Name>
-					<X>2748</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<DelimiterWidth Class="UnitValue">
-						<Value Class="Double">
-							0
-						</Value>
-						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-					</DelimiterWidth>
-					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
-					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
-					<ForwardLanesCount>2</ForwardLanesCount>
-					<Bidirectional>true</Bidirectional>
-					<BackwardLanesCount>2</BackwardLanesCount>
-					<Points>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>5480</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>5455</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>5455</Y><Z>0</Z></Point>
-					</Points>
-
-
-				</Road>
-
-			</Shapes>
-
-				</RoadNetwork>
-
+					<ZHeight>10</ZHeight>
+					<LineWidth>0</LineWidth>
+					<LineColor>-8355712</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>DASHED</LineStyle>
+					<Width>37.8</Width>
+					<Height>37.8</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-8355712</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 				<Rectangle>
 					<Id>1481569329407</Id>
 					<Name><![CDATA[rectangle1]]></Name>
@@ -5193,7 +5216,7 @@ target_y = 365;]]></Body>
 				<Group>
 					<Id>1482230747754</Id>
 					<Name><![CDATA[bts_camera]]></Name>
-					<X>-50</X><Y>2750</Y>
+					<X>-150</X><Y>2750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7048,6 +7071,24 @@ if(id == 3){
 				<Login><![CDATA[]]></Login>
 				<Password><![CDATA[]]></Password>
 			</ExternalConnection>
+			<ExternalConnection>
+				<Id>1483716185698</Id>
+				<Name><![CDATA[database]]></Name>
+				<X>0</X><Y>0</Y>
+				<Label><X>10</X><Y>0</Y></Label>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>true</ShowLabel>
+				<DatabaseType>EXCEL_ACCESS</DatabaseType>
+				<ConnectionURL><![CDATA[]]></ConnectionURL>
+				<ConnectOnStartup>true</ConnectOnStartup>
+				<DatabaseName><![CDATA[]]></DatabaseName>
+				<DbFileName><![CDATA[C:/$ergey/_MEGA/MGTUProject/Step/Step60.xlsm]]></DbFileName>
+				<Host><![CDATA[localhost]]></Host>
+				<JdbcDriverClassName><![CDATA[net.sourceforge.jtds.jdbc.Driver]]></JdbcDriverClassName>
+				<Login><![CDATA[]]></Login>
+				<Password><![CDATA[]]></Password>
+			</ExternalConnection>
 			<TableImportSettings>
 				<TableReference>
 					<PackageName><![CDATA[stepmodel4]]></PackageName>
@@ -7062,9 +7103,9 @@ if(id == 3){
 					<PackageName><![CDATA[stepmodel4]]></PackageName>
 					<ClassName><![CDATA[initial_posision]]></ClassName>
 				</TableReference>
-				<ConnectionIndex>0</ConnectionIndex>
+				<ConnectionIndex>1</ConnectionIndex>
 				<ExternalTableName><![CDATA["InitialPosision"]]></ExternalTableName>
-				<AutoImport>true</AutoImport>
+				<AutoImport>false</AutoImport>
 			</TableImportSettings>
 		</ImportSettings>
 		<ExportSettings>
