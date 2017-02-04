@@ -1177,7 +1177,7 @@ camera_bts.update();]]></Body>
 						<Code><![CDATA[self.y * scale_index + LRCars_displacement]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[2]]></Code>
 					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1365,7 +1365,7 @@ camera_bts.update();]]></Body>
 						<Code><![CDATA[self.y * scale_index + RLCars_displacement]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[2]]></Code>
 					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1553,7 +1553,7 @@ camera_bts.update();]]></Body>
 						<Code><![CDATA[self.y * scale_index - 19]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[2]]></Code>
 					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -1741,7 +1741,7 @@ camera_bts.update();]]></Body>
 						<Code><![CDATA[self.y * scale_index - 19]]></Code>
 					</YCode>
 					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[2]]></Code>
 					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -8631,8 +8631,8 @@ update_camera();]]></ActionCode>
 					<Id>1483905490286</Id>
 					<Name><![CDATA[window3d]]></Name>
 					<X>-6200</X><Y>1800</Y>
-					<Width>500</Width>
-					<Height>300</Height>
+					<Width>600</Width>
+					<Height>600</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ShowLabel>false</ShowLabel>
@@ -8644,9 +8644,9 @@ update_camera();]]></ActionCode>
 				<Control Type="Window3D">
 					<Id>1483905500448</Id>
 					<Name><![CDATA[window3d1]]></Name>
-					<X>-5600</X><Y>1800</Y>
-					<Width>500</Width>
-					<Height>300</Height>
+					<X>-5500</X><Y>1800</Y>
+					<Width>600</Width>
+					<Height>600</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ShowLabel>false</ShowLabel>
@@ -8660,7 +8660,7 @@ update_camera();]]></ActionCode>
     			<TimePlot>
 					<Id>1483905544321</Id>
 					<Name><![CDATA[plot]]></Name>
-					<X>-6240</X><Y>2140</Y>
+					<X>-5800</X><Y>1800</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8677,15 +8677,15 @@ update_camera();]]></ActionCode>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>1100</Width>
-					<Height>360</Height>
+					<Width>500</Width>
+					<Height>200</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor/>
 					<ChartArea>
 						<XOffset>60</XOffset>
 						<YOffset>20</YOffset>
-						<Width>1020</Width>
-						<Height>290</Height>
+						<Width>420</Width>
+						<Height>130</Height>
 						<BackgroundColor>-1</BackgroundColor>
 						<BorderColor>-16777216</BorderColor>
 						<GridColor>-12566464</GridColor>
