@@ -1,0 +1,151 @@
+'В этой функции автомобиль расчитывает собственное ускорение в каждый момент времени.
+'Рассчет производится по одному из 6 алгоритмов в зависимости от дистанции до впередиидущего ТС и времени, за 
+'которое эту дистанцию необходимо обеспечить. 
+Public Sub Move()
+    Dim distance As Double
+    distance = pControlDistance
+    
+    Dim deltaDist As Double
+    Dim deltaSpeed As Double
+    Dim acs As Double
+    acs = 0
+       
+    Dim Tmax As Double
+    Dim Vmax As Double
+    Dim Vmin As Double
+    Dim disc As Double
+    Dim Vmax1 As Double
+    Dim Vmax2 As Double
+    Dim time1 As Double
+    Dim time2 As Double
+   
+    pLastX = pX
+    pLastSpeed = pSpeed
+    
+    If Not pCarAhead Is Nothing Then
+        If pRoad Mod 2 = 0 Then
+            deltaDist = pX - pCarAhead.LastX - pCarAhead.Size - distance
+        Else
+            deltaDist = pCarAhead.LastX - pX - pCarAhead.Size - distance
+        End If
+        deltaSpeed = pSpeed - pCarAhead.LastSpeed
+               
+        If deltaDist <> 0 Then    
+            If (deltaDist > 0) Then
+                If (deltaSpeed / pCarAhead.LastSpeed >= 0) Then
+    
+                    If (deltaSpeed * pControlTime * 0.5 >= deltaDist) Then
+                        acs = -(deltaSpeed * deltaSpeed) / (2 * deltaDist)
+                    Else
+                        
+                        disc = 16 * deltaDist * deltaDist - 8 * pControlTime * deltaSpeed * _
+                        (2 * deltaDist - pControlTime * deltaSpeed)
+                        
+                        Vmax1 = (4 * deltaDist - Sqr(disc)) / (4 * pControlTime)
+                        Vmax2 = (4 * deltaDist + Sqr(disc)) / (4 * pControlTime)
+                        
+                        If Vmax1 > deltaSpeed Then
+                            Vmax = Vmax1
+                        Else
+                            Vmax = Vmax2
+                        End If
+                        
+                        Tmax = ((Vmax - deltaSpeed) * pControlTime) / (2 * Vmax - deltaSpeed)
+                        
+                        acs = (Vmax - deltaSpeed) / Tmax
+                        
+                    End If
+                
+                Else
+                    
+                    disc = 2 * (4 * deltaDist - deltaSpeed) * (2 * deltaDist - deltaSpeed - _
+                    2 * deltaSpeed * pControlTime)
+                    
+                    time1 = (2 * (deltaSpeed + deltaSpeed * pControlTime - 2 * deltaDist) + _
+                    Sqr(disc)) / (2 * deltaSpeed)
+                    
+                    time2 = (2 * (deltaSpeed + deltaSpeed * pControlTime - 2 * deltaDist) - _
+                    Sqr(disc)) / (2 * deltaSpeed)
+                    
+                    If time1 < pControlTime Then
+                        Tmax = time1
+                    Else
+                        Tmax = time2
+                    End If
+                    
+					acs = -(deltaSpeed / Tmax)
+                End If
+            
+            Else
+                
+                If (deltaSpeed / pCarAhead.LastSpeed <= 0) Then
+    
+                    If (deltaSpeed * pControlTime * 0.5 <= deltaDist) Then
+                        acs = -(deltaSpeed * deltaSpeed) / (2 * deltaDist)
+                    Else
+                        
+                        disc = 16 * deltaDist * deltaDist - 8 * pControlTime * deltaSpeed * _
+                        (2 * deltaDist - pControlTime * deltaSpeed)
+                        
+                        Vmax1 = (4 * deltaDist - Sqr(disc)) / (4 * pControlTime)
+                        Vmax2 = (4 * deltaDist + Sqr(disc)) / (4 * pControlTime)
+                        
+                        If Vmax1 < deltaSpeed Then
+                            Vmax = Vmax1
+                        Else
+                            Vmax = Vmax2
+                        End If
+                        
+                        Tmax = ((Vmax - deltaSpeed) * pControlTime) / (2 * Vmax - deltaSpeed)
+                        
+                        acs = (Vmax - deltaSpeed) / Tmax
+                        
+                    End If
+                
+                Else
+                    
+                    disc = 2 * (4 * deltaDist - deltaSpeed) * (2 * deltaDist - deltaSpeed - _
+                    2 * deltaSpeed * pControlTime)
+                    
+                    time1 = (2 * (deltaSpeed + deltaSpeed * pControlTime - 2 * deltaDist) + _
+                    Sqr(disc)) / (2 * deltaSpeed)
+                    
+                    time2 = (2 * (deltaSpeed + deltaSpeed * pControlTime - 2 * deltaDist) - _
+                    Sqr(disc)) / (2 * deltaSpeed)
+                    
+                    If time1 < pControlTime Then
+                        Tmax = time1
+                    Else
+                        Tmax = time2
+                    End If
+                    
+                    If (Abs(deltaSpeed) < 1) Then
+                        pSpeed = pCarAhead.LastSpeed
+                        acs = 0
+                    Else
+                        acs = -(deltaSpeed / Tmax)
+                    End If
+                    
+                End If
+            
+            End If
+            
+            pControlTime = pControlTime - (1 / gTick)
+        Else
+            If deltaSpeed > 0 Then
+                acs = -1
+            ElseIf deltaSpeed < 0 Then
+                acs = 1
+            End If
+        End If
+    End If
+    
+    If pRoad Mod 2 = 0 Then
+        pX = pX - pSpeed / gTick - (acs / (gTick * gTick * 2))
+        pSpeed = pSpeed + acs / gTick
+    Else
+        pX = pX + pSpeed / gTick + (acs / (gTick * gTick * 2))
+        pSpeed = pSpeed + acs / gTick
+    End If
+    
+End Sub

@@ -4999,8 +4999,8 @@ camera_bts.update();]]></Body>
 					<Width>9480</Width>
 					<Height>5480</Height>
 					<Rotation>0.0</Rotation>
-					<FillColor>-16744448</FillColor>
-					<FillMaterial>null</FillMaterial>
+					<FillColor>-16711936</FillColor>
+					<FillMaterial>grass</FillMaterial>
 				</Rectangle>
 				<RoadNetwork>
 					<Id>1481569155302</Id>
@@ -5018,7 +5018,7 @@ camera_bts.update();]]></Body>
 						</Value>
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</LaneWidth>
-					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
+					<RoadBackgroundColor>-6776680</RoadBackgroundColor>
 					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
 					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
 					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
@@ -5081,7 +5081,7 @@ camera_bts.update();]]></Body>
 						</Value>
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</LaneWidth>
-					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
+					<RoadBackgroundColor>-6776680</RoadBackgroundColor>
 					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
 					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
 					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
@@ -5142,13 +5142,13 @@ camera_bts.update();]]></Body>
 					<Z>2</Z>
 					<ZHeight>0</ZHeight>
 					<LineWidth>0</LineWidth>
-					<LineColor>-8355712</LineColor>
+					<LineColor>-6776680</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>DASHED</LineStyle>
 					<Width>37.8</Width>
 					<Height>37.8</Height>
 					<Rotation>0.0</Rotation>
-					<FillColor>-8355712</FillColor>
+					<FillColor>-6776680</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Rectangle>
@@ -5546,7 +5546,7 @@ camera_bts.update();]]></Body>
 					<Height>5480</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-16744448</FillColor>
-					<FillMaterial>null</FillMaterial>
+					<FillMaterial>grass</FillMaterial>
 				</Rectangle>
 				<Rectangle>
 					<Id>1482235299598</Id>
@@ -5587,7 +5587,7 @@ camera_bts.update();]]></Body>
 						</Value>
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</LaneWidth>
-					<RoadBackgroundColor>-8355712</RoadBackgroundColor>
+					<RoadBackgroundColor>-6776680</RoadBackgroundColor>
 					<RoadBackgroundMaterial>null</RoadBackgroundMaterial>
 					<LanesDelimitingLineStyle>SINGLE_DASHED</LanesDelimitingLineStyle>
 					<LanesDelimitingLineColor>-1</LanesDelimitingLineColor>
@@ -5637,7 +5637,7 @@ camera_bts.update();]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>2714.5207352940183</Offset>
+					<Offset>2719.0</Offset>
 					<OnForwardSide>true</OnForwardSide>
 					<LeftLane>2</LeftLane>
 					<RightLane>0</RightLane>
@@ -5683,7 +5683,7 @@ camera_bts.update();]]></Body>
 					<BackwardLanesCount>2</BackwardLanesCount>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>2725</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>2700</X><Y>0</Y><Z>0</Z></Point>
@@ -5700,7 +5700,7 @@ camera_bts.update();]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>5.48</Offset>
+					<Offset>0.4</Offset>
 					<OnForwardSide>false</OnForwardSide>
 					<LeftLane>2</LeftLane>
 					<RightLane>0</RightLane>
@@ -5763,7 +5763,7 @@ camera_bts.update();]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>5.48</Offset>
+					<Offset>0.5</Offset>
 					<OnForwardSide>false</OnForwardSide>
 					<LeftLane>2</LeftLane>
 					<RightLane>0</RightLane>
@@ -5811,9 +5811,9 @@ camera_bts.update();]]></Body>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>2725</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>2700</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>2775.574</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>2724</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>2699</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>2774.574</Y><Z>0</Z></Point>
 					</Points>
 
 			<Shapes>
@@ -5826,7 +5826,7 @@ camera_bts.update();]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>2719.52</Offset>
+					<Offset>2723.0</Offset>
 					<OnForwardSide>true</OnForwardSide>
 					<LeftLane>2</LeftLane>
 					<RightLane>0</RightLane>
@@ -5964,8 +5964,8 @@ camera_bts.update();]]></Body>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-14.385000000000218</X><Y>-22</Y></Point>
 						<Point><X>0</X><Y>-10</Y></Point>
-						<Point><X>0</X><Y>-45</Y></Point>
-						<Point><X>0</X><Y>-35</Y></Point>
+						<Point><X>0</X><Y>-46</Y></Point>
+						<Point><X>0</X><Y>-36</Y></Point>
 						<Point><X>-14.385000000000218</X><Y>-22</Y></Point>
 					</Points>
 					<SourceLane>0</SourceLane>
@@ -5986,8 +5986,8 @@ camera_bts.update();]]></Body>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-4.795000000000073</X><Y>-22</Y></Point>
 						<Point><X>0</X><Y>-10</Y></Point>
-						<Point><X>0</X><Y>-45</Y></Point>
-						<Point><X>0</X><Y>-35</Y></Point>
+						<Point><X>0</X><Y>-46</Y></Point>
+						<Point><X>0</X><Y>-36</Y></Point>
 						<Point><X>-4.795000000000073</X><Y>-22</Y></Point>
 					</Points>
 					<SourceLane>1</SourceLane>
@@ -5997,7 +5997,7 @@ camera_bts.update();]]></Body>
 				<LaneConnector SourceId="1482615350384" TargetId="1482615519351">
 					<Id>1483625322754</Id>
 					<Name><![CDATA[laneConnector9]]></Name>
-					<X>3525.615</X><Y>8737</Y>
+					<X>3525.615</X><Y>8736</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6006,11 +6006,11 @@ camera_bts.update();]]></Body>
 					<Z>0</Z>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>14.385000000000218</X><Y>23</Y></Point>
+						<Point><X>14.385000000000218</X><Y>24</Y></Point>
 						<Point><X>0</X><Y>10</Y></Point>
-						<Point><X>0</X><Y>45</Y></Point>
-						<Point><X>0</X><Y>35</Y></Point>
-						<Point><X>14.385000000000218</X><Y>23</Y></Point>
+						<Point><X>0</X><Y>46</Y></Point>
+						<Point><X>0</X><Y>36</Y></Point>
+						<Point><X>14.385000000000218</X><Y>24</Y></Point>
 					</Points>
 					<SourceLane>0</SourceLane>
 					<TargetLane>0</TargetLane>
@@ -6019,7 +6019,7 @@ camera_bts.update();]]></Body>
 				<LaneConnector SourceId="1482615350384" TargetId="1482615519351">
 					<Id>1483625322828</Id>
 					<Name><![CDATA[laneConnector11]]></Name>
-					<X>3535.205</X><Y>8737</Y>
+					<X>3535.205</X><Y>8736</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6028,11 +6028,11 @@ camera_bts.update();]]></Body>
 					<Z>0</Z>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>4.795000000000073</X><Y>23</Y></Point>
+						<Point><X>4.795000000000073</X><Y>24</Y></Point>
 						<Point><X>0</X><Y>10</Y></Point>
-						<Point><X>0</X><Y>45</Y></Point>
-						<Point><X>0</X><Y>35</Y></Point>
-						<Point><X>4.795000000000073</X><Y>23</Y></Point>
+						<Point><X>0</X><Y>46</Y></Point>
+						<Point><X>0</X><Y>36</Y></Point>
+						<Point><X>4.795000000000073</X><Y>24</Y></Point>
 					</Points>
 					<SourceLane>1</SourceLane>
 					<TargetLane>1</TargetLane>
@@ -6151,7 +6151,7 @@ camera_bts.update();]]></Body>
 				<Camera3D>
 					<Id>1483738396309</Id>
 					<Name><![CDATA[camera_old_crossing]]></Name>
-					<X>3484</X><Y>8809.333</Y><Z>150</Z>
+					<X>3490</X><Y>8810</Y><Z>150</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ShowLabel>false</ShowLabel>
 					<RotationX>35.0</RotationX>
@@ -8364,12 +8364,156 @@ camera_bts.update();]]></Body>
 				<Camera3D>
 					<Id>1483905413884</Id>
 					<Name><![CDATA[camera_bts_crossing]]></Name>
-					<X>2690</X><Y>2800</Y><Z>150</Z>
+					<X>2700</X><Y>2800</Y><Z>150</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ShowLabel>false</ShowLabel>
 					<RotationX>35.0</RotationX>
 					<RotationZ>-45.0</RotationZ>
 				</Camera3D>
+				<Line>
+					<Id>1486318250010</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>3561.5</X><Y>8750.4</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1.1</ZHeight>
+					<LineWidth>0.8</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>80</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1486318344671</Id>
+					<Name><![CDATA[line1]]></Name>
+					<X>3439</X><Y>8769.5</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1.1</ZHeight>
+					<LineWidth>0.8</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>80</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1486327617724</Id>
+					<Name><![CDATA[line2]]></Name>
+					<X>3549.5</X><Y>8783</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1.1</ZHeight>
+					<LineWidth>0.8</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>80</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1486327780776</Id>
+					<Name><![CDATA[line3]]></Name>
+					<X>3530.5</X><Y>8654</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>1.1</ZHeight>
+					<LineWidth>0.8</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>80</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Text>
+					<Id>1486328147065</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>-6300</X><Y>1740</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Перекресток с импульсным управлением]]></Text>
+					<Font>
+						<Name>Calibri</Name>
+						<Size>36</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1486328313662</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>-5240</X><Y>1740</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Традиционный перекресток]]></Text>
+					<Font>
+						<Name>Calibri</Name>
+						<Size>36</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Shapes>
 			<Controls>
 				<Control Type="Button">
@@ -8630,8 +8774,8 @@ update_camera();]]></ActionCode>
 				<Control Type="Window3D">
 					<Id>1483905490286</Id>
 					<Name><![CDATA[window3d]]></Name>
-					<X>-6200</X><Y>1800</Y>
-					<Width>600</Width>
+					<X>-6400</X><Y>1800</Y>
+					<Width>840</Width>
 					<Height>600</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
@@ -8644,8 +8788,8 @@ update_camera();]]></ActionCode>
 				<Control Type="Window3D">
 					<Id>1483905500448</Id>
 					<Name><![CDATA[window3d1]]></Name>
-					<X>-5500</X><Y>1800</Y>
-					<Width>600</Width>
+					<X>-5440</X><Y>1800</Y>
+					<Width>840</Width>
 					<Height>600</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
@@ -8656,83 +8800,6 @@ update_camera();]]></ActionCode>
 					<Camera>camera_old_crossing</Camera>
 				</Control>
 			</Controls>
-			<Charts>
-    			<TimePlot>
-					<Id>1483905544321</Id>
-					<Name><![CDATA[plot]]></Name>
-					<X>-5800</X><Y>1800</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AutoUpdate>true</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1482912000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-					</RecurrenceCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>500</Width>
-					<Height>200</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<ChartArea>
-						<XOffset>60</XOffset>
-						<YOffset>20</YOffset>
-						<Width>420</Width>
-						<Height>130</Height>
-						<BackgroundColor>-1</BackgroundColor>
-						<BorderColor>-16777216</BorderColor>
-						<GridColor>-12566464</GridColor>
-					</ChartArea>
-					<Legend>
-						<Place>NORTH</Place>
-						<TextColor>-16777216</TextColor>
-						<Size>20</Size>
-					</Legend>
-					<Labels>
-						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-						<TextColor>-16777216</TextColor>
-					</Labels>
-					<Persistent>true</Persistent>
-					<ShowLegend>true</ShowLegend>
-					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
-					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
-					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
-					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
-					<VerScaleType>AUTO</VerScaleType>
-					<DrawLine>true</DrawLine>
-					<Interpolation>LINEAR</Interpolation>
-					<DatasetExpression>  
-						<Title><![CDATA[Перекресток с импульсным управлением]]></Title>
-					<Expression><![CDATA[my_dataset]]></Expression>
-					<Color>-9404272</Color>
-					<Expression2><![CDATA[bts_passes]]></Expression2>
-					<Expression2Flag>true</Expression2Flag>
-						<PointStyle>NONE</PointStyle>
-						<LineWidth>4.0</LineWidth>
-					</DatasetExpression>
-					<DatasetExpression>  
-						<Title><![CDATA[Традиционный перекресток]]></Title>
-					<Expression><![CDATA[my_dataset1]]></Expression>
-					<Color>-7667573</Color>
-					<Expression2><![CDATA[old_passes]]></Expression2>
-					<Expression2Flag>true</Expression2Flag>
-						<PointStyle>NONE</PointStyle>
-						<LineWidth>4.0</LineWidth>
-					</DatasetExpression>
-					<SamplesToKeep>100</SamplesToKeep>
-					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
-					<CustomLabelFormat><![CDATA[dd.MM.yyyy HH:mm:ss]]></CustomLabelFormat>
-					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
-    			</TimePlot>
-			</Charts>
 			<Areas>
 				<Area>
 					<Id>1482233607022</Id>
@@ -8782,12 +8849,27 @@ update_camera();]]></ActionCode>
 				<Area>
 					<Id>1482667512413</Id>
 					<Name><![CDATA[old_crossing]]></Name>
-					<X>2560</X><Y>8460</Y>
+					<X>3350</X><Y>8640</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Title><![CDATA[Old Crossing]]></Title>
+					<Width>100</Width>
+					<Height>100</Height>
+					<AlignTo>TOP_LEFT</AlignTo>
+					<Scaling>NONE</Scaling>
+					<Zoom>1.0</Zoom>
+				</Area>
+				<Area>
+					<Id>1486315496597</Id>
+					<Name><![CDATA[compare_view]]></Name>
+					<X>-6520</X><Y>1600</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Compare view]]></Title>
 					<Width>100</Width>
 					<Height>100</Height>
 					<AlignTo>TOP_LEFT</AlignTo>
@@ -9630,7 +9712,7 @@ if(id == 3){
 						<ColorMapping>
 							<Name><![CDATA[Material__4__Surf]]></Name>
 							<OriginalColor>-13138595</OriginalColor>
-							<Color>-65536</Color>
+							<Color>-5952982</Color>
 						</ColorMapping>
 						<ColorMapping>
 							<Name><![CDATA[Material__3__Surf]]></Name>
@@ -9842,7 +9924,7 @@ if(id == 3){
 				<Password><![CDATA[]]></Password>
 			</ExternalConnection>
 			<ExternalConnection>
-				<Id>1483716185698</Id>
+				<Id>1486316208753</Id>
 				<Name><![CDATA[database]]></Name>
 				<X>0</X><Y>0</Y>
 				<Label><X>10</X><Y>0</Y></Label>
@@ -9853,7 +9935,7 @@ if(id == 3){
 				<ConnectionURL><![CDATA[]]></ConnectionURL>
 				<ConnectOnStartup>true</ConnectOnStartup>
 				<DatabaseName><![CDATA[]]></DatabaseName>
-				<DbFileName><![CDATA[C:/$ergey/_MEGA/MGTUProject/Step/Step60.xlsm]]></DbFileName>
+				<DbFileName><![CDATA[C:/$ergey/_MEGA/MGTUProject/Step/Step9.xlsm]]></DbFileName>
 				<Host><![CDATA[localhost]]></Host>
 				<JdbcDriverClassName><![CDATA[net.sourceforge.jtds.jdbc.Driver]]></JdbcDriverClassName>
 				<Login><![CDATA[]]></Login>
